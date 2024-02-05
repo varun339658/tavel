@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code for Website</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #qr-code {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="qr-code"></div>
+
+    <script>
+        // URL of your website
+        var websiteUrl = "https://github.com/varun339658/tavel/blob/main/final%20copy.html";
+
+        // API endpoint for generating QR code
+        var qrCodeApiUrl = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + encodeURIComponent(websiteUrl);
+
+        // Create an image element for the QR code
+        var qrCodeImage = document.createElement('img');
+        qrCodeImage.src = qrCodeApiUrl;
+        qrCodeImage.alt = "QR Code for Website";
+
+        // Append the image to the div with id "qr-code"
+        document.getElementById('qr-code').appendChild(qrCodeImage);
+    </script>
+</body>
+</html>
