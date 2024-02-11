@@ -1,67 +1,240 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Travel Website</title>
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Tourist Website</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+        background-color: rgba(23, 22, 22, 0.8);
+        color: #ffffff;
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      margin-left: 20px;
+    }
+
+    nav {
+      margin-top: 15px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      margin: 0 20px;
+      font-size: 16px;
+      font-weight: bold;
+      transition: color 0.3s ease-in-out;
+    }
+
+    nav a:hover {
+      color: #ff4500;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background-image: url('hero-background.jpg');
+      background-size: cover;
+      color: white;
+    }
+
+    .hero-content {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .cta-button, .beauty-button {
+      display: inline-block;
+      padding: 15px 30px;
+      background-color: #ff4500;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .cta-button:hover, .beauty-button:hover {
+      background-color: #ff6347;
+    }
+
+    /* Featured Destinations Section */
+    .featured-destinations {
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .destination-card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+      flex: 1 0 300px;
+    }
+
+    .destination-card:hover {
+      transform: scale(1.05);
+    }
+
+    .destination-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .destination-details {
+      padding: 20px;
+    }
+
+    .destination-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .destination-description {
+      font-size: 16px;
+      color: #666;
+    }
+
+    /* Interactive Map Section */
+    .interactive-map {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .map-container {
+      position: relative;
+      padding-bottom: 75%;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .map-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Footer Section */
+    footer {
+      padding: 30px 0;
+      text-align: center;
+      background-color: #333;
+      color: rgb(149, 36, 36);
+    }
+  </style>
 </head>
 <body>
-	<div class="navbar">
-		<div class="logo">
-			<h1>Travel</h1>
-		</div>
-		<div class="menu">
-			<ul>
-				<li><a href="file:///E:/web.html#">Home</a></li>
-				<li><a href="https://www.justdial.com/Hyderabad/Travel-Agents/nct-10496380">Services</a></li>
-				<li><a href="">Places</a></li>
-				<li><a href="https://travelcontact.com/">Contact</a></li>
-				<li><a href="https://www.booking.com/index.en-gb.html?aid=2311236;label=en-in-booking-desktop-CmH43mrsjzqEEFQPgVycoAS652796016141:pl:ta:p1:p2:ac:ap:neg:fi:tikwd-65526620:lp1007740:li:dec:dm;ws=&gad_source=1&gclid=CjwKCAiAiP2tBhBXEiwACslfnl_yyYBScgbZtUo7m0swS1HFtkhOmTRweOxB-eNMg9xEPVrvRVvyFBoCRHAQAvD_BwE">Booking</a></li>
-			</ul>
-		</div>
-		<div class="signup">
-			<a href="file:///E:/signup.html">Sign Up</a>
-		</div>
-	</div>
-	<div class="body">
-		<div class="heading">
-			<h1>LEAVE YOUR FOOT PRINTS</h1>
-			<br>
-			<p>Live life with no excuses, travel with no regret </p>
-			<br>
-			<br>
-			<a href="file:///E:/varun/new/final/final%20copy.html">Learn More --> </a>
-		</div>
-		<div class="tours">
-			<div class="places">
-				<h2><b>DAL LAKE</b></h2>
-				<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Dal_Lake_Hazratbal_Srinagar.jpg/1200px-Dal_Lake_Hazratbal_Srinagar.jpg" style="width: 300px; height: 250px; border-radius: 12px;">
-				<br>
-				<br>
-			</div>
-			<div class="places">
-				<h2>GULMARG</h2>
-				<img src="https://hblimg.mmtcdn.com/content/hubble/img/destimg/mmt/destination/t_trp/m_gulmarg_main_tv_destination_img_1_l_911_1364.jpg?im=Resize=(576,324)" style="width: 300px; height: 250px; border-radius: 12px;">
-				<br>
-				<br>
 
-			</div>
-			<div class="places">
-				<h2>AGATTI ISLAND</h2>
-				<img src="https://hblimg.mmtcdn.com/content/hubble/img/destimg/mmt/destination/t_trp/m_gulmarg_main_tv_destination_img_1_l_911_1364.jpg?im=Resize=(576,324)" style="width: 300px; height: 250px; border-radius: 12px;">
-				<br>
-				<br>
-			</div>
-		</div>
-	</div>
-	<div class="footer">
-		<a href="#">Copyright</a>
-		<a href="#">Terms and Conditions</a>
-		<a href="#">Privacy Policy</a>
-		<a href="#">Cookies</a>
-		<a href="#">Complaints</a>
-	</div>
+  <!-- Header Section -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="file:///C:/Users/manda/OneDrive/Desktop/PROJECT/best%20time.html" class="beauty-button">Beauty</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>LEAVE YOUR FOOT PRINTS
+    </h1>
+      <p>Discover iconic landmarks, vibrant cultures, and diverse landscapes.</p>
+      <a href="file:///C:/Users/manda/OneDrive/Desktop/PROJECT/MAP.html" class="cta-button">Explore Now</a>
+    </div>
+  </section>
+
+  <!-- Featured Destinations Section -->
+  <section class="featured-destinations">
+    <div class="destination-card">
+      <img class="destination-image" src="https://www.adventurenation.com/blog/wp-content/uploads/2020/05/shutterstock_1704950425-kalga-hp-900x530.jpg" alt="Destination 1">
+      <div class="destination-details">
+        <div class="destination-title">Enchanting landscapes.</div>
+        <div class="destination-description">Explore the rich history and vibrant culture of this amazing landscapes.</div>
+      </div>
+    </div>
+
+    <div class="destination-card">
+      <img class="destination-image" src="https://cityfurnish.com/blog/wp-content/uploads/2023/08/beach-near-hotel-min.jpg" alt="Destination 2">
+      <div class="destination-details">
+        <div class="destination-title">Beach Paradise</div>
+        <div class="destination-description">Relax on pristine beaches and experience the serenity of coastal life.</div>
+      </div>
+    </div>
     
+    <div class="destination-card">
+        <img class="destination-image" src="https://media.architecturaldigest.com/photos/5d23a8332124fc00097f54e6/16:9/w_2560%2Cc_limit/GettyImages-538992520.jpg" alt="Destination 2">
+        <div class="destination-details">
+          <div class="destination-title">Indian architecture</div>
+          <div class="destination-description">There are no straight lines or sharp corners in nature. ...“Everything is designed</div>
+        </div>
+      </div>
+  </section>
+
+  <!-- Interactive Map Section -->
+  <section class="interactive-map">
+    <div class="map-container">
+      <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d11579324.459359894!2d74.17569426460627!3d20.527050090357423!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1640660874282!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    © 2024 Your Tourist Website. All rights reserved.
+  </footer>
+
 </body>
 </html>
