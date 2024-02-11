@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Containers</title>
+    <style>
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: black;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 400px;
+            height: 400px;  
+            margin: 10px;
+            float: right;
+            background-color: #0d0d0d;
+            border-radius: 5px;
+            padding: 10px;
+            display: inline-block; /* Display containers inline */
+            overflow: hidden; /* Hide overflow content */
+            position: relative; /* Position for hover effects */
+            transition: transform 0.3s ease; /* Smooth transition for hover */
+        }
+        .container:hover {
+            transform: scale(1.05); /* Enlarge container on hover */
+        }
+
+        .container:hover img {
+            transform: scale(1.1); /* Enlarge image on hover */
+        }
+
+
+        .container img {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .back-button {
+            position: fixed; /* Fixed position */
+            top: 20px; /* 20px from the top */
+            left: 20px; /* 20px from the left */
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 999;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover */
+        }
+        .back-button:hover {
+            background-color: #555;
+        }
+
+        /* Add additional hover styles */
+        .back-button:hover {
+            color: #fff; /* Change text color on hover */
+        }
+        @media screen and (max-width: 768px) {
+            .container {
+                width: calc(50% - 20px); /* Adjust width for responsiveness */
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .container {
+                width: 100%; /* Adjust width for responsiveness */
+            }
+        }
+        .back-button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Button -->
+    <button class="back-button" onclick="goBack()">Back</button>
+
+    <!-- First Row with Four Picture Containers -->
+    <div class="container">
+        <img src="https://i.pinimg.com/564x/a3/ad/4a/a3ad4a839db8fce1e2dafde11cbdb1ee.jpg" alt="Image 1">
+    </div>
+    <div class="container">
+        <img src="https://i.pinimg.com/564x/02/57/d0/0257d0e1556e77de3cf1a67a1bd031ab.jpg" alt="Image 3">
+    </div>
+    <div class="container">
+        <img src="https://i.pinimg.com/564x/05/0f/88/050f88f23f8d52cfbbd153015a0cec7c.jpg" alt="Image 4">
+    </div>
+
+    <!-- Additional Containers can be added as needed -->
+    <!-- Example of duplicating the container for more images -->
+    <div class="container">
+        <img src="https://i.pinimg.com/564x/29/5e/bf/295ebfbb41d77b8c772d33b66db70014.jpg" alt="Image 5">
+    </div>
+    <div class="container">
+        <img src="https://i.pinimg.com/564x/8f/dd/de/8fddde93a7c166548ca0b662770b4e47.jpg" alt="Image 5">
+    </div><div class="container">
+        <img src="https://i.pinimg.com/564x/06/25/32/062532c3ad6ab47cfc2879c154974494.jpg" alt="Image 5">
+    </div><div class="container">
+        <img src="https://i.pinimg.com/564x/19/48/4b/19484b44584353ad6945e53019fa8a17.jpg" alt="Image 5">
+    </div><div class="container">
+        <img src="https://i.pinimg.com/564x/54/75/40/547540fb4cea6e098d8a78f861cd561c.jpg" alt="Image 5">
+    </div><div class="container">
+        <img src="https://i.pinimg.com/736x/71/a8/57/71a8571e583da3cbb3933ae940b9a6eb.jpg" alt="Image 5">
+    </div><div class="container">
+        <img src="https://i.pinimg.com/564x/39/31/f2/3931f2be8a79a86afe47018e7d57c55d.jpg" alt="Image 5">
+    </div><div class="container">
+        <img src="https://i.pinimg.com/564x/f8/78/30/f87830fb7e500cc444cff52764264a3b.jpg" alt="Image 5">
+    </div><div class="container">
+        <img src="https://i.pinimg.com/564x/50/30/79/503079e1a585c50e8ff3472ed70653a6.jpg" alt="Image 5">
+    </div><div class="container">
+        <img src="https://i.pinimg.com/564x/d8/8a/5a/d88a5a5e6ede0e1d7656d767a73ec0ea.jpg" alt="Image 5">
+    </div><div class="container">
+        <img src="https://i.pinimg.com/564x/59/30/85/593085cd6e823d7478bae61061f824cc.jpg" alt="Image 5">
+    </div><div class="container">
+        <img src="https://i.pinimg.com/564x/8f/9e/af/8f9eaf5d3f05fae930192f3e415c67ea.jpg" alt="Image 5">
+    </div><div class="container">
+        <img src="https://media.istockphoto.com/id/511119416/photo/indian-landmark-gadi-sagar-in-rajasthan.jpg?s=2048x2048&w=is&k=20&c=vUqX5QXI3fBj7Wx-FmYpsWVY2N2fv3JceGLjsWNuRkg=" alt="Image 5">
+    </div><div class="container">
+        <img src="https://i.pinimg.com/564x/ba/2b/98/ba2b989e49d1f422e4cbf7c3df4ec10e.jpg" alt="Image 5">
+    </div><div class="container">
+        <img src="https://i.pinimg.com/236x/b1/47/a5/b147a5d5b0be28440402031873c0ce9e.jpg" alt="Image 5">
+    </div>
+
+    <!-- Repeat this pattern for all other containers -->
+
+    <script>
+        function goBack() {
+            window.location.href = "file:///C:/Users/manda/OneDrive/Desktop/PROJECT/sri.html";
+        }
+    </script>
+</body>
+</html>
