@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Containers</title>
+    <style>
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: black;
+        }
+        .container {
+            width: 550px;
+            height: 550px;
+            margin: 80px auto;
+            background-color: #0d0d0d;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: left;
+        }
+        .container strong {
+            color: #c9a9a9;
+        }
+        .container img {
+            width: 200px;
+            height: 200px;
+            border-radius: 30%;
+            margin-bottom: 10px;
+        }
+        .container p {
+            font-size: 22px;
+            line-height: 1.5;
+            color: #e2d9d9;
+        }
+        #searchButton {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="searchButton">
+        <form onsubmit="return searchState()">
+            <input type="text" id="searchInput" placeholder="Enter state name">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <div id="stateInfoContainer">
+        <!-- This container will be populated with state information dynamically -->
+    </div>
+
+    <div class="container" id="gulmargContainer">
+        <img src="https://hblimg.mmtcdn.com/content/hubble/img/destimg/mmt/destination/t_trp/m_gulmarg_main_tv_destination_img_1_l_911_1364.jpg?im=Resize=(576,324)" alt="gulmarg">
+        <p><strong>Gulmarg</strong><br>
+            <strong>State:</strong> Jammu and Kashmir<br>
+            <strong>Tourist Places in Gulmarg :</strong> Gulmarg Gondola Ride, Shrine of Baba Reshi, Gulmarg Golf Course, Alpather Lake, St. Mary's Church<br>
+            <strong>Best Time to Visit Gulmarg:</strong> April to June<br>
+            <strong>Restaurants in Gulmarg:</strong> The Hunters Bar, Bakshi Restaurant, Nedou's Dining Room, Cloves Restaurant<br>
+            <strong>Gulmarg is famous for:</strong> Adventure, Hills & Mountains, Relaxation, Food & Culture, Romantic, Honeymoon
+        </p>
+    </div>
+    <div class="container">
+        <img src="image2.jpg" alt="Image 2">
+        <p><img src="https://hblimg.mmtcdn.com/content/hubble/img/destimg/mmt/destination/t_trp/m_gulmarg_main_tv_destination_img_1_l_911_1364.jpg?im=Resize=(576,324)" alt="gulmarg">
+            <p><strong>goa</strong><br>
+                <strong>State:</strong>Jammu and Kashmir<br>
+    <strong>Tourist Places in Gulmarg :</strong>Gulmarg Gondola Ride, Shrine of Baba Reshi, Gulmarg Golf Course, Alpather Lake, St. Mary's Church<br>
+    <strong>Best Time to Visit Gulmarg:</strong>April to June<br>
+    <strong>Restaurants in Gulmarg:</strong>The Hunters Bar, Bakshi Restaurant, Nedou's Dining Room, Cloves Restaurant<br>
+    <strong>Gulmarg is famous for:</strong>
+    Adventure, Hills & Mountains, Relaxation, Food & Culture, Romantic, Honeymoon.</p>
+    </div>
+</div>
+<div class="container">
+    <img src="image2.jpg" alt="Image 2">
+    <p><img src="https://hblimg.mmtcdn.com/content/hubble/img/destimg/mmt/destination/t_trp/m_gulmarg_main_tv_destination_img_1_l_911_1364.jpg?im=Resize=(576,324)" alt="gulmarg">
+        <p><strong>manali</strong><br>
+            <strong>State:</strong>Jammu and Kashmir<br>
+<strong>Tourist Places in Gulmarg :</strong>Gulmarg Gondola Ride, Shrine of Baba Reshi, Gulmarg Golf Course, Alpather Lake, St. Mary's Church<br>
+<strong>Best Time to Visit Gulmarg:</strong>April to June<br>
+<strong>Restaurants in Gulmarg:</strong>The Hunters Bar, Bakshi Restaurant, Nedou's Dining Room, Cloves Restaurant<br>
+<strong>Gulmarg is famous for:</strong>
+Adventure, Hills & Mountains, Relaxation, Food & Culture, Romantic, Honeymoon.</p>
+</div>
+
+    <!-- JavaScript for handling the search and redirection -->
+    <script>
+        function searchState() {
+            var input = document.getElementById("searchInput").value.toLowerCase().trim(); // Get the input value and convert to lowercase
+            var containers = document.getElementsByClassName("container"); // Get all containers
+            
+            for (var i = 0; i < containers.length; i++) {
+                var container = containers[i];
+                var stateName = container.querySelector("strong").innerText.toLowerCase().trim(); // Get the state name and convert to lowercase
+                
+                // If the input matches the state name, scroll to the container
+                if (stateName.includes(input)) {
+                    container.scrollIntoView({ behavior: "smooth" }); // Scroll to the container
+                    return false; // Prevent form submission and page reload
+                }
+            }
+            alert("State not found!"); // Alert user if state is not found
+            return false; // Prevent form submission and page reload
+        }
+    </script>
+</body>
+</html>
