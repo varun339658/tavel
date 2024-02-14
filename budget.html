@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Containers</title>
+    <style>
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: rgb(14, 14, 14);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 90px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            flex: 1 0 300px;
+            position: relative;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        .container strong {
+            color: #981616;
+        }
+
+        .container img {
+            width: 100%; /* Responsive image */
+            max-width: 300px; /* Adjust maximum width as needed */
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            margin: 0 auto 20px;
+        }
+
+        .container p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Define background images for each container 
+        #gulmargContainer {
+            background-image: url('https://ihplb.b-cdn.net/wp-content/uploads/2020/11/Children-Park-in-Gulmarg.jpg');
+        }
+
+        #agattiIslandContainer {
+            background-image: url('https://www.lakshadweeptravelguru.com/wp-content/uploads/2019/11/agatti-island1-1.jpg');
+        }
+
+        /* Add more container IDs and corresponding background images as needed */
+
+        /* Search Button Styles */
+        #searchButton {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #981616;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            z-index: 999;
+            display: inline-block;
+        }
+
+        #searchButton:hover {
+            background-color: #701010;
+        }
+
+        @media only screen and (max-width: 768px) {
+            #searchButton {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            #searchButton {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+        }
+        
+        
+    </style>
+</head>
+<body>
+    
+    <div id="searchButton">
+        <form onsubmit="return searchState()">
+            <input type="text" id="searchInput" placeholder="Enter state name">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    
+
+    <div id="stateInfoContainer">
+        <!-- This container will be populated with state information dynamically -->
+    
+
+
+
+
+<div class="container" id="gulmargContainer">
+    <p><strong>Gulmarg</strong><br>
+        <img src="https://ihplb.b-cdn.net/wp-content/uploads/2020/11/Children-Park-in-Gulmarg.jpg" alt="Gulmarg">
+    <ul>
+        <li>Accommodation: $70 - $300 per night</li>
+        <li>Food: $15 - $40 per meal</li>
+        <li>Transportation: $10 - $25 per day</li>
+        <li>Attractions: Gondola rides, skiing, trekking.</li>
+    </ul>
+    <p>Budget Tips: Pre-book ski equipment and passes for discounts. Try local Kashmiri cuisine for an authentic experience.</p>
+    </p>
+</div>
+<div class="container" id="agattiIslandContainer">
+    <p><strong>Agatti Island</strong><br>
+        <img src="https://www.lakshadweeptravelguru.com/wp-content/uploads/2019/11/agatti-island1-1.jpg" alt="Agatti Island">
+    <ul>
+        <li>Accommodation: $80 - $250 per night</li>
+        <li>Food: $20 - $40 per meal</li>
+        <li>Transportation: $10 - $30 per day</li>
+        <li>Attractions: Pristine white sands, turquoise waters, water activities.</li>
+    </ul>
+    <p>Budget Tips: Book accommodations in advance, especially during peak seasons. Pack sunscreen and hats for sun protection.</p>
+    </p>
+</div>
+<div class="container" id="kavarattiIslandContainer">
+    <p><strong>Kavaratti Island</strong><br>
+        <img src="kavaratti-island-image.jpg" alt="Kavaratti Island">
+    <ul>
+        <li>Accommodation: $80 - $250 per night</li>
+        <li>Food: $20 - $40 per meal</li>
+        <li>Transportation: $10 - $30 per day</li>
+        <li>Attractions: Pristine white sands, turquoise waters, water activities.</li>
+    </ul>
+    <p>Budget Tips: Book accommodations in advance, especially during peak seasons. Pack sunscreen and hats for sun protection.</p>
+    </p>
+</div>
+<div class="container" id="diuFortContainer">
+    <p><strong>Diu Fort</strong><br>
+        <img src="diu-fort-image.jpg" alt="Diu Fort">
+    <ul>
+        <li>Accommodation: $60 - $200 per night</li>
+        <li>Food: $15 - $35 per meal</li>
+        <li>Transportation: $10 - $25 per day</li>
+        <li>Attractions: Historical architecture, scenic views.</li>
+    </ul>
+    <p>Budget Tips: Explore local eateries for affordable seafood. Rent bicycles for exploring the town.</p>
+    </p>
+</div>
+<div class="container" id="naidaCavesContainer">
+    <p><strong>Naida Caves</strong><br>
+        <img src="naida-caves-image.jpg" alt="Naida Caves">
+    <ul>
+        <li>Accommodation: N/A (usually a day trip)</li>
+        <li>Food: $10 - $25 per meal</li>
+        <li>Transportation: $5 - $20 for local transportation</li>
+        <li>Attractions: Natural limestone caves, rock formations.</li>
+    </ul>
+    <p>Budget Tips: Wear comfortable shoes for exploring the caves. Entry fees may apply.</p>
+    </p>
+</div>
+<div class="container" id="silvassaContainer">
+    <p><strong>Silvassa</strong><br>
+        <img src="silvassa-image.jpg" alt="Silvassa">
+    <ul>
+        <li>Accommodation: $50 - $150 per night</li>
+        <li>Food: $10 - $25 per meal</li>
+        <li>Transportation: $5 - $20 per day</li>
+        <li>Attractions: Tribal culture, gardens, wildlife sanctuaries.</li>
+    </ul>
+    <p>Budget Tips: Visit during the off-peak season for better deals on accommodations. Explore local markets for handicrafts and souvenirs.</p>
+    </p>
+</div>
+<div class="container" id="vangangaLakeGardenContainer">
+    <p><strong>Vanganga Lake Garden</strong><br>
+        <img src="vanganga-lake-garden-image.jpg" alt="Vanganga Lake Garden">
+    <ul>
+        <li>Accommodation: N/A (usually a day trip)</li>
+        <li>Food: $5 - $15 per meal</li>
+        <li>Transportation: $5 - $20 for local transportation</li>
+        <li>Attractions: Scenic gardens, boating, birdwatching.</li>
+    </ul>
+    <p>Budget Tips: Pack a picnic for a budget-friendly day out. Entry to the garden is usually free.</p>
+    </p>
+</div>
+<div class="container" id="radhanagarBeachContainer">
+    <p><strong>Radhanagar Beach</strong><br>
+        <img src="radhanagar-beach-image.jpg" alt="Radhanagar Beach">
+    <ul>
+        <li>Accommodation: $80 - $300 per night</li>
+        <li>Food: $20 - $40 per meal</li>
+        <li>Transportation: $10 - $30 per day</li>
+        <li>Attractions: Pristine white sands, turquoise waters, water activities.</li>
+    </ul>
+    <p>Budget Tips: Book accommodations in advance, especially during peak seasons. Pack sunscreen and hats for sun protection.</p>
+    </p>
+</div>
+
+<div class="container" id="cellularJailContainer">
+    <p><strong>Cellular Jail</strong><br>
+        <img src="cellular-jail-image.jpg" alt="Cellular Jail">
+    <ul>
+        <li>Accommodation: $50 - $150 per night (in nearby Port Blair)</li>
+        <li>Food: $10 - $25 per meal</li>
+        <li>Transportation: $5 - $20 for local transportation</li>
+        <li>Attractions: Historical significance, light and sound show.</li>
+    </ul>
+    <p>Budget Tips: Book tickets for the light and sound show in advance. Explore the nearby areas for local cuisine.</p>
+    </p>
+</div>
+<div class="container" id="redFortContainer">
+    <p><strong>Red Fort</strong><br>
+        <img src="red-fort-image.jpg" alt="Red Fort">
+    <ul>
+        <li>Accommodation: $50 - $200 per night (in Delhi)</li>
+        <li>Food: $10 - $30 per meal</li>
+        <li>Transportation: $5 - $20 for local transportation</li>
+        <li>Attractions: Mughal architecture, museums, light and sound show.</li>
+    </ul>
+    <p>Budget Tips: Visit during weekdays to avoid crowds. Explore nearby markets for souvenirs and street food.</p>
+    </p>
+</div>
+<div class="container" id="indiaGateContainer">
+    <p><strong>India Gate</strong><br>
+        <img src="india-gate-image.jpg" alt="India Gate">
+    <ul>
+        <li>Accommodation: N/A (usually a day visit)</li>
+        <li>Food: $5 - $15 per meal</li>
+        <li>Transportation: $5 - $20 for local transportation</li>
+        <li>Attractions: War memorial, evening lightings.</li>
+    </ul>
+    <p>Budget Tips: Visit during evening hours for a more atmospheric experience. Explore nearby Connaught Place for shopping and dining.</p>
+    </p>
+</div>
+<div class="container" id="tawangMonasteryContainer">
+    <p><strong>Tawang Monastery</strong><br>
+        <img src="tawang-monastery-image.jpg" alt="Tawang Monastery">
+    <ul>
+        <li>Accommodation: $30 - $100 per night</li>
+        <li>Food: $5 - $20 per meal</li>
+        <li>Transportation: $10 - $30 per day</li>
+        <li>Attractions: Buddhist architecture, scenic views.</li>
+    </ul>
+    <p>Budget Tips: Consider staying in guesthouses near the monastery. Explore local eateries for traditional Tibetan cuisine.</p>
+    </p>
+</div>
+<div class="container" id="ziroValleyContainer">
+    <p><strong>Ziro Valley</strong><br>
+        <img src="ziro-valley-image.jpg" alt="Ziro Valley">
+    <ul>
+        <li>Accommodation: $20 - $80 per night</li>
+        <li>Food: $5 - $15 per meal</li>
+        <li>Transportation: $10 - $25 per day</li>
+        <li>Attractions: Lush green landscapes, tribal culture.</li>
+    </ul>
+    <p>Budget Tips: Stay in homestays for a more immersive experience. Explore local markets for handicrafts and organic produce.</p>
+    </p>
+</div>
+<div class="container" id="kazirangaNationalParkContainer">
+    <p><strong>Kaziranga National Park</strong><br>
+        <img src="kaziranga-national-park-image.jpg" alt="Kaziranga National Park">
+    <ul>
+        <li>Accommodation: $50 - $200 per night</li>
+        <li>Food: $10 - $30 per meal</li>
+        <li>Transportation: $10 - $50 per day (including safari costs)</li>
+        <li>Attractions: Wildlife safaris, birdwatching, nature trails.</li>
+    </ul>
+    <p>Budget Tips: Book safaris in advance to secure slots. Carry binoculars and cameras for wildlife spotting.</p>
+    </p>
+</div>
+<div class="container" id="kamakhyaTempleContainer">
+    <p><strong>Kamakhya Temple</strong><br>
+        <img src="kamakhya-temple-image.jpg" alt="Kamakhya Temple">
+    <ul>
+        <li>Accommodation: $30 - $100 per night</li>
+        <li>Food: $5 - $20 per meal</li>
+        <li>Transportation: $5 - $20 per day</li>
+        <li>Attractions: Spiritual significance, architectural beauty.</li>
+    </ul>
+    <p>Budget Tips: Explore nearby areas for affordable accommodations and dining options. Attend early morning rituals for a spiritual experience.</p>
+    </p>
+</div>
+<div class="container" id="bodhGayaContainer">
+    <p><strong>Bodh Gaya</strong><br>
+        <img src="bodh-gaya-image.jpg" alt="Bodh Gaya">
+    <ul>
+        <li>Accommodation: $20 - $80 per night</li>
+        <li>Food: $5 - $15 per meal</li>
+        <li>Transportation: $10 - $30 per day</li>
+        <li>Attractions: Mahabodhi Temple, Bodhi Tree, Buddhist monasteries.</li>
+    </ul>
+    <p>Budget Tips: Stay in guesthouses or budget hotels near the main attractions. Participate in meditation sessions and cultural events.</p>
+    </p>
+</div>
+<div class="container" id="tombOfSherShahSuriContainer">
+    <p><strong>Tomb of Sher Shah Suri</strong><br>
+        <img src="tomb-of-sher-shah-suri-image.jpg" alt="Tomb of Sher Shah Suri">
+    <ul>
+        <li>Accommodation: $20 - $80 per night (Nearby cities like Sasaram)</li>
+        <li>Food: $5 - $20 per meal</li>
+        <li>Transportation: $5 - $30 per day</li>
+        <li>Attractions: Historical architecture, picturesque surroundings.</li>
+    </ul>
+    <p>Budget Tips: Consider day trips from nearby cities for cost-effective travel. Explore local cuisine and markets.</p>
+    </p>
+</div>
+<div class="container" id="chitrakoteFallsContainer">
+    <p><strong>Chitrakote Falls</strong><br>
+        <img src="chitrakote-falls-image.jpg" alt="Chitrakote Falls">
+    <ul>
+        <li>Accommodation: $20 - $80 per night (Nearby towns like Jagdalpur)</li>
+        <li>Food: $5 - $20 per meal</li>
+        <li>Transportation: $5 - $30 per day</li>
+        <li>Attractions: Natural beauty, boat rides, tribal culture.</li>
+    </ul>
+    <p>Budget Tips: Opt for budget guesthouses or homestays in nearby towns. Explore local cuisine and handicrafts.</p>
+    </p>
+</div>
+<div class="container" id="barnawaparaWildlifeSanctuaryContainer">
+    <p><strong>Barnawapara Wildlife Sanctuary</strong><br>
+        <img src="barnawapara-wildlife-sanctuary-image.jpg" alt="Barnawapara Wildlife Sanctuary">
+    <ul>
+        <li>Accommodation: $30 - $100 per night (Nearby towns like Raipur)</li>
+        <li>Food: $5 - $20 per meal</li>
+        <li>Transportation: $10 - $30 per day</li>
+        <li>Attractions: Wildlife safari, birdwatching, nature trails.</li>
+    </ul>
+    <p>Budget Tips: Consider camping options for a closer wildlife experience. Pack binoculars and camera for wildlife sightings.</p>
+    </p>
+</div>
+<div class="container" id="bagaBeachContainer">
+    <p><strong>Baga Beach</strong><br>
+        <img src="baga-beach-image.jpg" alt="Baga Beach">
+    <ul>
+        <li>Accommodation: $50 - $200 per night</li>
+        <li>Food: $10 - $30 per meal</li>
+        <li>Transportation: $5 - $20 per day</li>
+        <li>Attractions: Water sports, beach shacks, nightlife</li>
+    </ul>
+    <p>Budget Tips: Book accommodations close to the beach to enjoy easy access. Bargain with local vendors for water sports activities.</p>
+    </p>
+</div>
+<div class="container" id="dudhsagarFallsContainer">
+    <p><strong>Dudhsagar Falls</strong><br>
+        <img src="dudhsagar-falls-image.jpg" alt="Dudhsagar Falls">
+    <ul>
+        <li>Entry Fee: $2 - $5 per person</li>
+        <li>Food: $5 - $15 per meal</li>
+        <li>Transportation: $10 - $30 per day (including trekking if required)</li>
+        <li>Attractions: Majestic waterfall, trekking trails</li>
+    </ul>
+    <p>Budget Tips: Wear comfortable footwear for trekking. Carry snacks and water for the journey.</p>
+    </p>
+</div>
+<div class="container" id="girNationalParkContainer">
+    <p><strong>Gir National Park</strong><br>
+        <img src="gir-national-park-image.jpg" alt="Gir National Park">
+    <ul>
+        <li>Entry Fee: $5 - $15 per person</li>
+        <li>Accommodation: $50 - $200 per night (if staying in nearby lodges)</li>
+        <li>Food: $10 - $30 per meal</li>
+        <li>Transportation: $20 - $50 per day (including safari charges)</li>
+    </ul>
+    <p>Budget Tips: Opt for shared safaris to reduce costs. Carry binoculars for wildlife spotting.</p>
+    </p>
+</div>
+<div class="container" id="rannOfKutchContainer">
+    <p><strong>Rann of Kutch</strong><br>
+        <img src="rann-of-kutch-image.jpg" alt="Rann of Kutch">
+    <ul>
+        <li>Accommodation: $30 - $150 per night (depending on type)</li>
+        <li>Food: $5 - $20 per meal</li>
+        <li>Transportation: $10 - $50 per day (including local transport and entry fees)</li>
+        <li>Attractions: White salt desert, cultural programs, handicrafts</li>
+    </ul>
+    <p>Budget Tips: Visit during the Rann Utsav for a vibrant cultural experience. Book accommodations in advance.</p>
+    </p>
+</div>
+<div class="container" id="kurukshetraContainer">
+    <p><strong>Kurukshetra</strong><br>
+        <img src="kurukshetra-image.jpg" alt="Kurukshetra">
+    <ul>
+        <li>Accommodation: $20 - $80 per night</li>
+        <li>Food: $5 - $15 per meal</li>
+        <li>Transportation: $5 - $20 per day (including local transport)</li>
+        <li>Attractions: Historical sites, museums, religious landmarks</li>
+    </ul>
+    <p>Budget Tips: Explore local eateries for authentic North Indian cuisine. Visit during festivals for cultural experiences.</p>
+    </p>
+</div>
+<div class="container" id="sultanpurNationalParkContainer">
+    <p><strong>Sultanpur National Park</strong><br>
+        <img src="sultanpur-national-park-image.jpg" alt="Sultanpur National Park">
+    <ul>
+        <li>Accommodation: $20 - $100 per night (varies based on nearby options)</li>
+        <li>Food: $5 - $20 per meal</li>
+        <li>Transportation: $5 - $30 per day (including entry fees and local transport)</li>
+        <li>Attractions: Bird watching, nature trails, photography</li>
+    </ul>
+    <p>Budget Tips: Carry your own water and snacks. Visit during migratory bird seasons for the best experience.</p>
+    </p>
+</div>
+<div class="container" id="hidimbaDeviTempleContainer">
+    <p><strong>Hidimba Devi Temple, Manali</strong><br>
+        <img src="hidimba-devi-temple-image.jpg" alt="Hidimba Devi Temple">
+    <ul>
+        <li>Accommodation: $30 - $150 per night (depending on hotel type and proximity)</li>
+        <li>Food: $5 - $25 per meal (depending on restaurant type)</li>
+        <li>Transportation: $10 - $50 per day (including local transport and adventure activities)</li>
+        <li>Attractions: Temple architecture, surrounding forests, scenic views</li>
+    </ul>
+    <p>Budget Tips: Consider staying in guesthouses for a more budget-friendly experience. Bargain with local transport providers for better rates.</p>
+    </p>
+</div>
+<div class="container" id="betlaNationalParkContainer">
+    <p><strong>Betla National Park</strong><br>
+        <img src="betla-national-park-image.jpg" alt="Betla National Park">
+    <ul>
+        <li>Accommodation: $20 - $100 per night (depending on lodge or resort)</li>
+        <li>Food: $5 - $20 per meal</li>
+        <li>Transportation: $10 - $40 per day (including entry fees and local transport)</li>
+        <li>Attractions: Wildlife safaris, trekking, birdwatching</li>
+    </ul>
+    <p>Budget Tips: Carry your own snacks and water during safaris. Book accommodations in advance during peak tourist seasons.</p>
+    </p>
+</div>
+<div class="container" id="dassamFallsContainer">
+    <p><strong>Dassam Falls</strong><br>
+        <img src="dassam-falls-image.jpg" alt="Dassam Falls">
+    <ul>
+        <li>Accommodation: $20 - $80 per night (options available in nearby towns)</li>
+        <li>Food: $5 - $15 per meal (local eateries and roadside stalls)</li>
+        <li>Transportation: $10 - $30 per day (including entry fees and local transport)</li>
+        <li>Attractions: Waterfall, surrounding natural beauty</li>
+    </ul>
+    <p>Budget Tips: Visit during the monsoon season for the best waterfall views. Carry insect repellent and wear sturdy shoes for exploring.</p>
+    </p>
+</div>
+<div class="container" id="hampiContainer">
+    <p><strong>Hampi</strong><br>
+        <img src="hampi-image.jpg" alt="Hampi">
+    <ul>
+        <li>Accommodation: $10 - $80 per night (options available in guesthouses and lodges)</li>
+        <li>Food: $3 - $15 per meal (local eateries and restaurants)</li>
+        <li>Transportation: $5 - $20 per day (rental bicycles and local transport)</li>
+        <li>Attractions: Ancient ruins, temples, boulders, river views</li>
+    </ul>
+    <p>Budget Tips: Explore the ruins on foot or by bicycle to save on transportation costs. Bargain with local vendors for souvenirs and handicrafts.</p>
+    </p>
+</div>
+<div class="container" id="mysorePalaceContainer">
+    <p><strong>Mysore Palace</strong><br>
+        <img src="mysore-palace-image.jpg" alt="Mysore Palace">
+    <ul>
+        <li>Accommodation: $20 - $150 per night (options available in nearby hotels and guesthouses)</li>
+        <li>Food: $5 - $25 per meal (local restaurants and cafes)</li>
+        <li>Transportation: $5 - $20 per day (including entry fees and local transport)</li>
+        <li>Attractions: Palace architecture, museums, gardens</li>
+    </ul>
+    <p>Budget Tips: Visit during off-peak hours to avoid crowds. Consider purchasing a combined ticket for entry to multiple attractions.</p>
+    </p>
+</div>
+<div class="container" id="alleppeyContainer">
+    <p><strong>Alleppey</strong><br>
+        <img src="alleppey-image.jpg" alt="Alleppey">
+    <ul>
+        <li>Accommodation: $20 - $150 per night (options available in houseboats and guesthouses)</li>
+        <li>Food: $5 - $20 per meal (local restaurants and eateries)</li>
+        <li>Transportation: $5 - $30 per day (including boat rides and local transport)</li>
+        <li>Attractions: Backwaters, houseboat stays, beaches</li>
+    </ul>
+    <p>Budget Tips: Book houseboats in advance for better deals. Explore local markets for fresh seafood and souvenirs.</p>
+    </p>
+</div>
+<div class="container" id="munnarContainer">
+    <p><strong>Munnar</strong><br>
+        <img src="munnar-image.jpg" alt="Munnar">
+    <ul>
+        <li>Accommodation: $20 - $120 per night (options available in resorts and homestays)</li>
+        <li>Food: $5 - $20 per meal (local restaurants and tea stalls)</li>
+        <li>Transportation: $5 - $25 per day (including entry fees and local transport)</li>
+        <li>Attractions: Tea plantations, national parks, waterfalls</li>
+    </ul>
+    <p>Budget Tips: Visit during the off-season for lower accommodation rates. Carry warm clothing for cooler temperatures.</p>
+    </p>
+</div>
+<div class="container" id="khajurahoContainer">
+    <p><strong>Khajuraho</strong><br>
+        <img src="khajuraho-image.jpg" alt="Khajuraho">
+    <ul>
+        <li>Accommodation: $20 - $150 per night (options available in hotels and guesthouses)</li>
+        <li>Food: $5 - $25 per meal (local restaurants and street vendors)</li>
+        <li>Transportation: $5 - $30 per day (including entry fees and local transport)</li>
+        <li>Attractions: Khajuraho temples, light and sound show, museums</li>
+    </ul>
+    <p>Budget Tips: Explore nearby areas on foot or bicycle to save on transportation costs. Book accommodations in advance during peak seasons.</p>
+    </p>
+</div>
+<div class="container" id="bandhavgarhContainer">
+    <p><strong>Bandhavgarh National Park</strong><br>
+        <img src="bandhavgarh-image.jpg" alt="Bandhavgarh National Park">
+    <ul>
+        <li>Accommodation: $30 - $200 per night (options available in resorts and lodges)</li>
+        <li>Food: $5 - $30 per meal (available in resorts and local eateries)</li>
+        <li>Transportation: $10 - $50 per day (including safari charges and local transport)</li>
+        <li>Attractions: Wildlife safaris, tiger spotting, birdwatching</li>
+    </ul>
+    <p>Budget Tips: Book safari tickets in advance to avoid last-minute charges. Carry sunscreen and insect repellent during outdoor activities.</p>
+    </p>
+</div>
+<div class="container" id="gatewayOfIndiaContainer">
+    <p><strong>Gateway of India</strong><br>
+        <img src="gateway-of-india-image.jpg" alt="Gateway of India">
+    <ul>
+        <li>No accommodation (A historical monument)</li>
+        <li>Food: $5 - $20 per meal (available in nearby restaurants and street food stalls)</li>
+        <li>Transportation: $5 - $20 per day (local transport and ferry rides)</li>
+        <li>Attractions: Historical monument, seafront views, boat rides</li>
+    </ul>
+    <p>Budget Tips: Visit during weekdays to avoid crowds. Explore nearby Colaba Causeway for shopping and street food.</p>
+    </p>
+</div>
+<div class="container" id="ajantaElloraContainer">
+    <p><strong>Ajanta and Ellora Caves</strong><br>
+        <img src="ajanta-ellora-caves-image.jpg" alt="Ajanta and Ellora Caves">
+    <ul>
+        <li>Accommodation: $20 - $150 per night (options available in nearby towns)</li>
+        <li>Food: $5 - $25 per meal (local restaurants and eateries)</li>
+        <li>Transportation: $5 - $30 per day (including entry fees and local transport)</li>
+        <li>Attractions: Cave exploration, historical architecture, guided tours</li>
+    </ul>
+    <p>Budget Tips: Book accommodations in advance during peak tourist seasons. Carry water and snacks during cave exploration.</p>
+    </p>
+</div>
+<div class="container" id="kanglaFortContainer">
+    <p><strong>Kangla Fort</strong><br>
+        <img src="kangla-fort-image.jpg" alt="Kangla Fort">
+    <ul>
+        <li>Accommodation: $20 - $100 per night (options available in nearby cities)</li>
+        <li>Food: $5 - $20 per meal (local restaurants and eateries)</li>
+        <li>Transportation: $5 - $30 per day (including entry fees and local transport)</li>
+        <li>Attractions: Historical fort, museums, cultural events</li>
+    </ul>
+    <p>Budget Tips: Explore the fort on foot to save on transportation costs. Visit during off-peak hours to avoid crowds.</p>
+    </p>
+</div>
+<div class="container" id="loktakLakeContainer">
+    <p><strong>Loktak Lake</strong><br>
+        <img src="loktak-lake-image.jpg" alt="Loktak Lake">
+    <ul>
+        <li>Accommodation: $30 - $100 per night (options available in nearby towns)</li>
+        <li>Food: $5 - $20 per meal (local restaurants and eateries)</li>
+        <li>Transportation: $5 - $30 per day (including entry fees and local transport)</li>
+        <li>Attractions: Boating, floating islands, Keibul Lamjao National Park</li>
+    </ul>
+    <p>Budget Tips: Consider staying in budget guesthouses or homestays near the lake. Bargain for boat rides to get the best prices.</p>
+    </p>
+</div>
+<div class="container" id="elephantFallsContainer">
+    <p><strong>Elephant Falls</strong><br>
+        <img src="elephant-falls-image.jpg" alt="Elephant Falls">
+    <ul>
+        <li>Accommodation: $20 - $80 per night (options available in nearby towns)</li>
+        <li>Food: $5 - $20 per meal (local restaurants and eateries)</li>
+        <li>Transportation: $5 - $20 per day (including entry fees and local transport)</li>
+        <li>Attractions: Scenic waterfall, nature trails, photography spots</li>
+    </ul>
+    <p>Budget Tips: Visit early in the morning to avoid crowds and capture the best photos. Bring snacks and water for the trek to the falls.</p>
+    </p>
+</div>
+<div class="container" id="cherrapunjiContainer">
+    <p><strong>Cherrapunji</strong><br>
+        <img src="cherrapunji-image.jpg" alt="Cherrapunji">
+    <ul>
+        <li>Accommodation: $20 - $100 per night (varies based on hotel type and amenities)</li>
+        <li>Food: $5 - $30 per meal (local restaurants and street vendors)</li>
+        <li>Transportation: $10 - $40 per day (including local transport and guided tours)</li>
+        <li>Attractions: Living Root Bridges, Nohkalikai Falls, Seven Sisters Falls</li>
+    </ul>
+    <p>Budget Tips: Book accommodations in advance, especially during peak tourist seasons. Join group tours for better rates on transportation and sightseeing.</p>
+    </p>
+</div>
+<div class="container" id="vantawngFallsContainer">
+    <p><strong>Vantawng Falls</strong><br>
+        <img src="vantawng-falls-image.jpg" alt="Vantawng Falls">
+    <ul>
+        <li>Accommodation: $30 - $80 per night (available in nearby towns)</li>
+        <li>Food: $5 - $20 per meal (local eateries and restaurants)</li>
+        <li>Transportation: $5 - $30 per day (including entry fees and local transport)</li>
+        <li>Attractions: Spectacular waterfall, nature walks, photography opportunities</li>
+    </ul>
+    <p>Budget Tips: Visit during the offseason for lower accommodation rates. Carry snacks and water for the trek to the falls.</p>
+    </p>
+</div>
+<div class="container" id="champhaiContainer">
+    <p><strong>Champhai</strong><br>
+        <img src="champhai-image.jpg" alt="Champhai">
+    <ul>
+        <li>Accommodation: $20 - $70 per night (guesthouses and budget hotels)</li>
+        <li>Food: $5 - $25 per meal (local restaurants and street food)</li>
+        <li>Transportation: $5 - $20 per day (local transport within the town)</li>
+        <li>Attractions: Murlen National Park, Lengteng Wildlife Sanctuary, Rih Dil Lake</li>
+    </ul>
+    <p>Budget Tips: Stay in guesthouses for a more affordable experience. Explore local markets for handicrafts and souvenirs.</p>
+    </p>
+</div>
+<div class="container" id="kohimaWarCemeteryContainer">
+    <p><strong>Kohima War Cemetery</strong><br>
+        <img src="kohima-war-cemetery-image.jpg" alt="Kohima War Cemetery">
+    <ul>
+        <li>No accommodation directly at the site</li>
+        <li>Food: $5 - $20 per meal (available in Kohima town)</li>
+        <li>Transportation: $10 - $30 per day (local transport and guided tours)</li>
+        <li>Attractions: Historical significance, well-maintained memorial</li>
+    </ul>
+    <p>Budget Tips: Stay in Kohima town and arrange local transport to visit the cemetery. Join guided tours for insights into the history.</p>
+    </p>
+</div>
+<div class="container" id="dzukoValleyContainer">
+    <p><strong>Dzüko Valley</strong><br>
+        <img src="dzuko-valley-image.jpg" alt="Dzüko Valley">
+    <ul>
+        <li>No accommodation directly at the valley</li>
+        <li>Food: $5 - $20 per meal (available in nearby towns)</li>
+        <li>Transportation: $20 - $50 per day (including guided tours and transport)</li>
+        <li>Attractions: Scenic beauty, trekking opportunities</li>
+    </ul>
+    <p>Budget Tips: Plan for a day trip from nearby towns. Carry your food and water for the trek.</p>
+    </p>
+</div>
+<div class="container" id="jagannathTemplePuriContainer">
+    <p><strong>Jagannath Temple, Puri</strong><br>
+        <img src="jagannath-temple-puri-image.jpg" alt="Jagannath Temple, Puri">
+    <ul>
+        <li>No entry fee</li>
+        <li>Food: $5 - $15 per meal (available in nearby eateries)</li>
+        <li>Transportation: $5 - $15 per day (local transport within Puri)</li>
+        <li>Attractions: Religious significance, architecture</li>
+    </ul>
+    <p>Budget Tips: Explore local eateries for budget-friendly meals. Respect temple customs and traditions.</p>
+    </p>
+</div>
+<div class="container" id="konarkSunTempleContainer">
+    <p><strong>Konark Sun Temple</strong><br>
+        <img src="konark-sun-temple-image.jpg" alt="Konark Sun Temple">
+    <ul>
+        <li>Entry Fee: $5 - $10 per person</li>
+        <li>Food: $5 - $20 per meal (available in nearby restaurants)</li>
+        <li>Transportation: $10 - $30 per day (including local transport)</li>
+        <li>Attractions: Architectural marvel, historical significance</li>
+    </ul>
+    <p>Budget Tips: Visit during off-peak hours to avoid crowds. Carry water and snacks for the visit.</p>
+    </p>
+</div>
+<div class="container" id="goldenTempleContainer">
+    <p><strong>Golden Temple</strong><br>
+        <img src="golden-temple-image.jpg" alt="Golden Temple">
+    <ul>
+        <li>No entry fee</li>
+        <li>Free meals (langar) available</li>
+        <li>Transportation: $5 - $15 per day (including local transport)</li>
+        <li>Attractions: Spiritual atmosphere, architecture</li>
+    </ul>
+    <p>Budget Tips: Respect the customs and traditions of the temple. Enjoy the free meals offered at the langar.</p>
+    </p>
+</div>
+<div class="container" id="jallianwalaBaghContainer">
+    <p><strong>Jallianwala Bagh massacre</strong><br>
+        <img src="jallianwala-bagh-image.jpg" alt="Jallianwala Bagh">
+    <ul>
+        <li>No entry fee</li>
+        <li>Historical site</li>
+        <li>Transportation: $5 - $20 per day (including local transport)</li>
+        <li>Attractions: Historical significance, memorial</li>
+    </ul>
+    <p>Budget Tips: Consider taking a guided tour for better understanding of the events that occurred.</p>
+    </p>
+</div>
+<div class="container" id="hawaMahalContainer">
+    <p><strong>Hawa Mahal</strong><br>
+        <img src="hawa-mahal-image.jpg" alt="Hawa Mahal">
+    <ul>
+        <li>Entry Fee: $3 - $5 per person</li>
+        <li>Transportation: $5 - $15 per day (including local transport)</li>
+        <li>Attractions: Architectural marvel, panoramic view</li>
+    </ul>
+    <p>Budget Tips: Visit during early morning or late afternoon for better photo opportunities.</p>
+    </p>
+</div>
+<div class="container" id="udaipurContainer">
+    <p><strong>Udaipur</strong><br>
+        <img src="udaipur-image.jpg" alt="Udaipur">
+    <ul>
+        <li>Accommodation: $30 - $150 per night</li>
+        <li>Food: $5 - $20 per meal</li>
+        <li>Transportation: $5 - $20 per day</li>
+        <li>Attractions: City Palace, Lake Pichola, Jag Mandir</li>
+    </ul>
+    <p>Budget Tips: Explore local markets for handicrafts and souvenirs. Consider staying in guesthouses or budget hotels.</p>
+    </p>
+</div>
+<div class="container" id="nathuLaContainer">
+    <p><strong>Nathu La</strong><br>
+        <img src="nathu-la-image.jpg" alt="Nathu La">
+    <ul>
+        <li>Entry Fee: $10 - $20 per person</li>
+        <li>Transportation: $30 - $50 per day (shared taxi or hired vehicle)</li>
+        <li>Attractions: Mountain pass, scenic views</li>
+    </ul>
+    <p>Budget Tips: Plan your visit during the appropriate season as the pass is closed during winter due to heavy snowfall.</p>
+    </p>
+</div>
+<div class="container" id="tsomgoLakeContainer">
+    <p><strong>Lake Tsomgo</strong><br>
+        <img src="tsomgo-lake-image.jpg" alt="Lake Tsomgo">
+    <ul>
+        <li>Accommodation: $50 - $200 per night</li>
+        <li>Food: $10 - $30 per meal</li>
+        <li>Transportation: $20 - $50 per day</li>
+        <li>Attractions: Scenic lake, yak rides, and snowfall in winter</li>
+    </ul>
+    <p>Budget Tips: Book accommodations in advance, especially during peak tourist seasons. Bring warm clothing as temperatures can drop significantly.</p>
+    </p>
+</div>
+
+<div class="container" id="meenakshiTempleContainer">
+    <p><strong>Meenakshi Temple</strong><br>
+        <img src="meenakshi-temple-image.jpg" alt="Meenakshi Temple">
+    <ul>
+        <li>Accommodation: $30 - $100 per night</li>
+        <li>Food: $5 - $20 per meal</li>
+        <li>Transportation: $10 - $30 per day</li>
+        <li>Attractions: Intricate architecture, colorful sculptures, and religious rituals</li>
+    </ul>
+    <p>Budget Tips: Visit during weekdays to avoid crowds. Respect temple customs and dress modestly.</p>
+    </p>
+</div>
+
+<div class="container" id="kodaikanalContainer">
+    <p><strong>Kodaikanal</strong><br>
+        <img src="kodaikanal-image.jpg" alt="Kodaikanal">
+    <ul>
+        <li>Accommodation: $40 - $150 per night</li>
+        <li>Food: $10 - $30 per meal</li>
+        <li>Transportation: $10 - $40 per day</li>
+        <li>Attractions: Kodaikanal Lake, Coaker's Walk, Pillar Rocks, and Bear Shola Falls</li>
+    </ul>
+    <p>Budget Tips: Consider staying in guesthouses or homestays for a more economical experience. Explore local markets for handicrafts and souvenirs.</p>
+    </p>
+</div>
+
+<div class="container" id="charminarContainer">
+    <p><strong>Charminar</strong><br>
+        <img src="charminar-image.jpg" alt="Charminar">
+    <ul>
+        <li>Accommodation: $20 - $100 per night</li>
+        <li>Food: $5 - $20 per meal</li>
+        <li>Transportation: $5 - $20 per day</li>
+        <li>Attractions: Architectural landmark, markets, and historical significance</li>
+    </ul>
+    <p>Budget Tips: Explore nearby markets for authentic Hyderabadi cuisine and souvenirs.</p>
+    </p>
+</div>
+
+<div class="container" id="thousandPillarTempleContainer">
+    <p><strong>Thousand Pillar Temple</strong><br>
+        <img src="thousand-pillar-temple-image.jpg" alt="Thousand Pillar Temple">
+    <ul>
+        <li>Accommodation: $20 - $80 per night</li>
+        <li>Food: $5 - $15 per meal</li>
+        <li>Transportation: $5 - $20 per day</li>
+        <li>Attractions: Historical temple with intricate architecture</li>
+    </ul>
+    <p>Budget Tips: Visit during early morning or late afternoon to avoid crowds and harsh sunlight.</p>
+    </p>
+</div>
+
+<div class="container" id="tripuraSundariTempleContainer">
+    <p><strong>Tripura Sundari Temple</strong><br>
+        <img src="tripura-sundari-temple-image.jpg" alt="Tripura Sundari Temple">
+    <ul>
+        <li>Accommodation: $30 - $100 per night</li>
+        <li>Food: $5 - $20 per meal</li>
+        <li>Transportation: $10 - $30 per day</li>
+        <li>Attractions: Sacred temple dedicated to Goddess Tripura Sundari</li>
+    </ul>
+    <p>Budget Tips: Respect temple customs and dress modestly. Explore local markets for souvenirs and traditional items.</p>
+    </p>
+</div>
+
+<div class="container" id="neermahalContainer">
+    <p><strong>Neermahal</strong><br>
+        <img src="neermahal-image.jpg" alt="Neermahal">
+    <ul>
+        <li>Accommodation: $40 - $150 per night</li>
+        <li>Food: $10 - $30 per meal</li>
+        <li>Transportation: $10 - $40 per day</li>
+        <li>Attractions: Lake palace with historical significance</li>
+    </ul>
+    <p>Budget Tips: Take a boat ride to explore the surroundings. Enjoy local cuisine in nearby restaurants.</p>
+    </p>
+</div>
+
+<div class="container" id="tajMahalContainer">
+    <p><strong>Taj Mahal</strong><br>
+        <img src="taj-mahal-image.jpg" alt="Taj Mahal">
+    <ul>
+        <li>Accommodation: $50 - $200 per night</li>
+        <li>Food: $10 - $40 per meal</li>
+        <li>Transportation: $10 - $50 per day</li>
+        <li>Attractions: Iconic monument, gardens, and historical complex</li>
+    </ul>
+    <p>Budget Tips: Book tickets in advance to avoid long queues. Visit during sunrise or sunset for the best views.</p>
+    </p>
+</div>
+
+<div class="container" id="varanasiContainer">
+    <p><strong>Varanasi</strong><br>
+        <img src="varanasi-image.jpg" alt="Varanasi">
+    <ul>
+        <li>Accommodation: $20 - $80 per night</li>
+        <li>Food: $5 - $20 per meal</li>
+        <li>Transportation: $5 - $20 per day</li>
+        <li>Attractions: Ghats, temples, and spiritual ceremonies</li>
+    </ul>
+    <p>Budget Tips: Explore local street food stalls for authentic flavors. Take a boat ride along the Ganges River at sunrise or sunset.</p>
+    </p>
+</div>
+
+<div class="container" id="jimCorbettContainer">
+    <p><strong>Jim Corbett National Park</strong><br>
+        <img src="jim-corbett-image.jpg" alt="Jim Corbett National Park">
+    <ul>
+        <li>Accommodation: $50 - $200 per night</li>
+        <li>Food: $10 - $30 per meal</li>
+        <li>Transportation: $20 - $50 per day</li>
+        <li>Attractions: Wildlife safaris, nature trails, and birdwatching</li>
+    </ul>
+    <p>Budget Tips: Book safari permits and accommodations well in advance. Carry binoculars and a camera for wildlife sightings.</p>
+    </p>
+</div>
+
+<div class="container" id="nainitalContainer">
+    <p><strong>Nainital</strong><br>
+        <img src="nainital-image.jpg" alt="Nainital">
+    <ul>
+        <li>Accommodation: $40 - $150 per night</li>
+        <li>Food: $10 - $30 per meal</li>
+        <li>Transportation: $10 - $40 per day</li>
+        <li>Attractions: Naini Lake, Naina Devi Temple, and Tiffin Top viewpoint</li>
+    </ul>
+    <p>Budget Tips: Explore local markets for handicrafts and souvenirs. Enjoy boating on Naini Lake during early mornings.</p>
+    </p>
+</div>
+
+<div class="container" id="victoriaMemorialContainer">
+    <p><strong>Victoria Memorial</strong><br>
+        <img src="victoria-memorial-image.jpg" alt="Victoria Memorial">
+    <ul>
+        <li>Accommodation: $20 - $80 per night</li>
+        <li>Food: $5 - $20 per meal</li>
+        <li>Transportation: $5 - $20 per day</li>
+        <li>Attractions: Iconic museum and historical monument</li>
+    </ul>
+    <p>Budget Tips: Visit during early mornings to avoid crowds and enjoy the peaceful ambiance. Explore nearby gardens and monuments.</p>
+    </p>
+</div>
+    <!-- JavaScript for handling the search and redirection -->
+    <script>
+        function searchState() {
+            var input = document.getElementById("searchInput").value.toLowerCase().trim(); // Get the input value and convert to lowercase
+            var containers = document.getElementsByClassName("container"); // Get all containers
+            
+            for (var i = 0; i < containers.length; i++) {
+                var container = containers[i];
+                var stateName = container.querySelector("strong").innerText.toLowerCase().trim(); // Get the state name and convert to lowercase
+                
+                // If the input matches the state name, scroll to the container
+                if (stateName.includes(input)) {
+                    container.scrollIntoView({ behavior: "smooth" }); // Scroll to the container
+                    return false; // Prevent form submission and page reload
+                }
+            }
+            alert("State not found!"); // Alert user if state is not found
+            return false; // Prevent form submission and page reload
+        }
+    </script>
+</body>
+</html>
